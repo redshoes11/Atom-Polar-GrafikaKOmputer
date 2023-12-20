@@ -150,12 +150,12 @@ void display()
     if (value == -1)
     {
         char cn[] = "UNIVERSITAS SUMATERA UTARA";
-        drawhead(-490, 900, 0, cn);
+        drawhead(-390, 900, 0, cn);
         char pn[] = "Medan, Indonesia";
-        drawsubhead(-250, 850, 0, pn);
+        drawsubhead(-150, 850, 0, pn);
 
         char dn[] = "S-1 ILMU KOMPUTER";
-        drawhead(-690, 650, 0, dn);
+        drawhead(-270, 650, 0, dn);
 
         char prn[] = "A Mini Project On";
         drawsubhead(-150, 450, 0, prn);
@@ -205,8 +205,7 @@ void display()
         char d[] = "(NEUTRON + PROTON)";
         drawString(-225, -30, 0, d);
 
-        char t[] = "NITROGEN";
-        drawhead(-100, 900, 0, n);
+        
         circle(400);
         circle(600);
         char o[] = "ORBIT";
@@ -227,14 +226,9 @@ void display()
 
         if (value == 0)
         {
-            char nu[] = "SELECT THE ELEMENT USING MENU";
-            drawhead(-490, 900, 0, nu);
+            char t[] = "NITROGEN";
+            drawhead(-100, 900, 0, t);
         }
-    }
-   
-    if (value == 7)
-    {
-
     }
 
     glutSwapBuffers();
@@ -322,19 +316,7 @@ void menu(int option)
 }
 void createMenu(void)
 {
-    submenu = glutCreateMenu(menu);
-    glutAddMenuEntry("HYDROGEN", 1);
-    glutAddMenuEntry("HELIUM", 2);
-    glutAddMenuEntry("LITHIUM", 3);
-    glutAddMenuEntry("BERILIUM", 4);
-    glutAddMenuEntry("BORON", 5);
-    glutAddMenuEntry("CARBON", 6);
-    glutAddMenuEntry("NITROGEN", 7);
-    glutAddMenuEntry("OXYGEN", 8);
-    glutAddMenuEntry("FLUORINE", 9);
-    glutAddMenuEntry("NEON", 10);
     mainmenu = glutCreateMenu(menu);
-    glutAddSubMenu("SELECT THE ELEMENT", submenu);
     glutAddMenuEntry("START SIMULATION", 11);
     glutAddMenuEntry("STOP SIMULATION", 12);
     glutAddMenuEntry("GOTO HOME SCREEN", 14);
@@ -342,6 +324,7 @@ void createMenu(void)
 
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
+
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
