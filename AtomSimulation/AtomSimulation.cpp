@@ -12,6 +12,7 @@ void init()
 {
     gluOrtho2D(-1000, 1000, -1000, 1000);
 }
+
 void circle(float rad)
 {
     glBegin(GL_POINTS);
@@ -22,6 +23,7 @@ void circle(float rad)
     }
     glEnd();
 }
+
 void drawString(float x, float y, float z, char* string)
 {
     glColor3f(1, 1, 1);
@@ -43,6 +45,7 @@ void drawhead(float x, float y, float z, char* string)
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *c);
     }
 }
+
 void drawsubhead(float x, float y, float z, char* string)
 {
     glColor3f(1, 1, 1);
@@ -53,6 +56,7 @@ void drawsubhead(float x, float y, float z, char* string)
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, *c);
     }
 }
+
 void nuc(float rad)
 {
     glBegin(GL_POLYGON);
@@ -63,6 +67,7 @@ void nuc(float rad)
     }
     glEnd();
 }
+
 void eleright(float rad)
 {
     glBegin(GL_POLYGON);
@@ -73,6 +78,7 @@ void eleright(float rad)
     }
     glEnd();
 }
+
 void eleleft(float rad)
 {
     glBegin(GL_POLYGON);
@@ -83,6 +89,7 @@ void eleleft(float rad)
     }
     glEnd();
 }
+
 void eletop(float rad)
 {
     glBegin(GL_POLYGON);
@@ -93,6 +100,7 @@ void eletop(float rad)
     }
     glEnd();
 }
+
 void eledown(float rad)
 {
     glBegin(GL_POLYGON);
@@ -103,6 +111,7 @@ void eledown(float rad)
     }
     glEnd();
 }
+
 void eletr(float rad)
 {
     glBegin(GL_POLYGON);
@@ -113,6 +122,7 @@ void eletr(float rad)
     }
     glEnd();
 }
+
 void eletl(float rad)
 {
     glBegin(GL_POLYGON);
@@ -123,6 +133,7 @@ void eletl(float rad)
     }
     glEnd();
 }
+
 void eledl(float rad)
 {
     glBegin(GL_POLYGON);
@@ -133,6 +144,7 @@ void eledl(float rad)
     }
     glEnd();
 }
+
 void eledr(float rad)
 {
     glBegin(GL_POLYGON);
@@ -143,6 +155,7 @@ void eledr(float rad)
     }
     glEnd();
 }
+
 void display()
 {
     glClearColor(0, 0, 0.1, 0.9);
@@ -186,10 +199,10 @@ void display()
         drawsubhead(290, -450, 0, d2);
 
         char gb[] = "DOSEN PENGAMPU: ";
-        drawhead(-690, -550, 0, gb);
+        drawhead(-690, -650, 0, gb);
 
-        char g3[] = "Herriyance";
-        drawhead(-690, -650, 0, g3);
+        char g3[] = "Herriyance S.T., M.Kom.";
+        drawhead(-690, -750, 0, g3);
 
         char in[] = "Press enter to Continue";
         drawhead(-250, -950, 0, in);
@@ -199,7 +212,7 @@ void display()
     }
     if (value != -1)
     {
-        nuc(250);
+        nuc(250); // membuat nucleus biru dengan nilai radian 250 (jari-jari 250)
         char n[] = "NUCLEUS";
         drawString(-90, 20, 0, n);
         char d[] = "(NEUTRON + PROTON)";
@@ -233,6 +246,7 @@ void display()
 
     glutSwapBuffers();
 }
+
 void rotate()
 {
     angle = angle + 1.0;
@@ -243,6 +257,7 @@ void rotate()
     glClear(GL_COLOR_BUFFER_BIT);
     glutPostRedisplay();
 }
+
 void mouseControl(int button, int state, int x, int y)
 {
     switch (button)
@@ -255,6 +270,7 @@ void mouseControl(int button, int state, int x, int y)
         break;
     }
 }
+
 void keyboard(unsigned char key, int x, int y)
 {
     if (key == 13)
@@ -281,6 +297,7 @@ void keyboard(unsigned char key, int x, int y)
         glutReshapeWindow(700, 700);
     }
 }
+
 void fkey(int key, int x, int y)
 {
 
@@ -289,6 +306,7 @@ void fkey(int key, int x, int y)
         glutReshapeWindow(glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
     }
 }
+
 void menu(int option)
 {
     if (option == 13)
@@ -314,6 +332,7 @@ void menu(int option)
 
     glutPostRedisplay();
 }
+
 void createMenu(void)
 {
     mainmenu = glutCreateMenu(menu);
